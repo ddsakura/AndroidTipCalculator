@@ -8,4 +8,4 @@ Completed user stories:
 * [x] User can select between tip amounts (i.e 10%, 15%, 20%)
 * [x] Upon selecting tip amount, formatted tip value is displayed
 * [x] User changes the total amount and updated tip is reflected automatically
-![Week 1 Project Screencast gif](https://raw.githubusercontent.com/ddsakura/AndroidTipCalculator/master/tipCal.gif)
+<img src="https://raw.githubusercontent.com/ddsakura/AndroidTipCalculator/master/tipCal.gif" width="300">
