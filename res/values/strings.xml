@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TipCalculator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="percent_ten">10%</string>
+    <string name="percent_fifteen">15%</string>
+    <string name="percent_twenty">20%</string>
+    <string name="tip_is">Tip is: </string>
+
+</resources>
