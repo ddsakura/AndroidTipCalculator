@@ -1,5 +1,5 @@
 # Week 1 Project: Tip Calculator
-Time spent: 2.5 hours spent in total, (spent more time on gif screen cast)
+Time spent: 3.5 hours spent in total
 
 Completed user stories:
 
