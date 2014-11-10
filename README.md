@@ -9,4 +9,5 @@ Completed user stories:
 * [x] Upon selecting tip amount, formatted tip value is displayed
 * [x] User changes the total amount and updated tip is reflected automatically
 * [x] Improve the user interface and experience by using images and/or colors
+
 <img src="https://raw.githubusercontent.com/ddsakura/AndroidTipCalculator/master/tipCal.gif" width="300">
