@@ -7,13 +7,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnCheckedChangeListener {
 
     private TextView tvTip;
 
@@ -21,11 +20,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private String tipString;
 
-    private Button btTen;
-
-    private Button btFifteen;
-
-    private Button btTwenty;
+    private RadioGroup rgroup;
 
     private double curTipPercent = 0.1d;
 
@@ -38,14 +33,8 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     private void initTipCalculator() {
-        btTen = (Button)findViewById(R.id.btTen);
-        btTen.setOnClickListener(this);
-
-        btFifteen = (Button)findViewById(R.id.btFifteen);
-        btFifteen.setOnClickListener(this);
-
-        btTwenty = (Button)findViewById(R.id.btTwenty);
-        btTwenty.setOnClickListener(this);
+        rgroup = (RadioGroup)findViewById(R.id.rgroup);
+        rgroup.setOnCheckedChangeListener(this);
 
         etTotal = (EditText)findViewById(R.id.etTotal);
         etTotal.addTextChangedListener(new TextWatcher() {
@@ -77,20 +66,20 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     @Override
-    public void onClick(View v) {
-        if (!etTotal.getText().equals("")) {
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (checkedId) {
+        case R.id.btTen:
+            curTipPercent = 0.1d;
+            break;
+        case R.id.btFifteen:
+            curTipPercent = 0.15d;
+            break;
+        case R.id.btTwenty:
+            curTipPercent = 0.2d;
+            break;
+        }
+        if (!etTotal.getText().toString().equals("")) {
             BigDecimal total = new BigDecimal(etTotal.getText().toString());
-            switch (v.getId()) {
-            case R.id.btTen:
-                curTipPercent = 0.1d;
-                break;
-            case R.id.btFifteen:
-                curTipPercent = 0.15d;
-                break;
-            case R.id.btTwenty:
-                curTipPercent = 0.2d;
-                break;
-            }
             tvTip.setText(tipString + " $" + (new BigDecimal(Double.toString(curTipPercent))).multiply(total));
         } else {
             tvTip.setText(tipString);

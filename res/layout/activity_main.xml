@@ -15,40 +15,56 @@
         android:ems="10"
         android:inputType="numberDecimal" />
 
-    <LinearLayout
-        android:id="@+id/llTip"
+    <RadioGroup
+        android:id="@+id/rgroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/etTotal" >
+        android:layout_below="@+id/etTotal"
+        android:orientation="horizontal" >
 
-        <Button
+        <RadioButton
             android:id="@+id/btTen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="@drawable/tip_button"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
             android:text="@string/percent_ten" />
 
-        <Button
+        <RadioButton
             android:id="@+id/btFifteen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="@drawable/tip_button"
+            android:button="@null"
+            android:gravity="center"
             android:text="@string/percent_fifteen" />
 
-        <Button
+        <RadioButton
             android:id="@+id/btTwenty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="@drawable/tip_button"
+            android:button="@null"
+            android:gravity="center"
             android:text="@string/percent_twenty" />
-    </LinearLayout>
+    </RadioGroup>
 
     <TextView
         android:id="@+id/tvTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/llTip"
+        android:layout_below="@+id/rgroup"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="56dp"
         android:text="@string/tip_is"
